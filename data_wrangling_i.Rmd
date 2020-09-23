@@ -5,11 +5,54 @@ output: github_document
 
 ```{r setup}
 library(tidyverse)
+library(readxl)
 ```
 
 ##Read in some data
 
-```{r}
+Read in the litters dataset.
 
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv")
+litters_df = janitor::clean_names(litters_df)
+
+```
+
+## Take a look at the data
+
+Printing in the console.
+
+```{r}
+litters_df
+```
+
+
+```{r}
+tail(litters_df)
+```
+
+```{r}
+skimr::skim(litters_df)
+```
+
+view(litters_df) in the console
+
+##Options to read_csv
+
+Check out ?read_csv to see more info
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv", skip=10, col_names=FALSE)
+```
+
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv")
+```
+
+##Other file formats
+
+Read in an excel file
+
+```{r}
+mlb_df = read_excel("./data/mlb11.xlsx")
 ```
 
