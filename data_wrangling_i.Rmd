@@ -80,3 +80,11 @@ litters_readr
 
 ```
 
+##Exporting data
+
+```{r}
+mlb_df
+
+write_csv(mlb_df, "./data/mlb_subtable.csv")
+```
+
