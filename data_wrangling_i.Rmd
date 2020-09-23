@@ -6,6 +6,7 @@ output: github_document
 ```{r setup}
 library(tidyverse)
 library(readxl)
+library(haven)
 ```
 
 ##Read in some data
@@ -54,5 +55,14 @@ Read in an excel file
 
 ```{r}
 mlb_df = read_excel("./data/mlb11.xlsx")
+```
+
+Learn more at ?read_excel
+
+Read in a sas file
+
+
+```{r}
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
 ```
 
